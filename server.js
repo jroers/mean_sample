@@ -25,15 +25,15 @@ app.get('*', function(req, res) {
 // END OF VIEWS
 // API ENDPOINTS
 
-// app.get('/api/todos', function (req, res) {
-// 	Todo.find(function(err, allTodos) {
-// 		if (err) { 
-// 			res.status(500).json({ error: err.message });
-// 		} else {
-// 			res.json(allTodos);
-// 		}
-// 	});
-// });
+app.get('/api/todos', function (req, res) {
+	Todo.find(function(err, allTodos) {
+		if (err) { 
+			res.status(500).json({ error: err.message });
+		} else {
+			res.json(allTodos);
+		}
+	});
+});
 
 // END OF API ENDPOINTS
 

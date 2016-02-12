@@ -14,16 +14,31 @@ app.use(express.static(__dirname + '/public'));
 // set view engine to hbs (handlebars)
 app.set('view engine', 'hbs');
 
-// ROUTES
+var db = require('./models');
+
+// VIEWS
 
 app.get('*', function(req, res) {
 	res.render('index');
 });
 
-// END OF ROUTES
+// END OF VIEWS
+// API ENDPOINTS
+
+// app.get('/api/todos', function (req, res) {
+// 	Todo.find(function(err, allTodos) {
+// 		if (err) { 
+// 			res.status(500).json({ error: err.message });
+// 		} else {
+// 			res.json(allTodos);
+// 		}
+// 	});
+// });
+
+// END OF API ENDPOINTS
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/mean_sample');
+// mongoose.connect('mongodb://localhost/mean_sample');
 
 // listen on port 3000
 app.listen(3000, function() {

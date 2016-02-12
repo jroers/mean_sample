@@ -37,7 +37,7 @@ app.get('*', function(req, res) {
 
 // END OF API ENDPOINTS
 
-// connect to mongodb
+// connect to mongodb - Removed 
 // mongoose.connect('mongodb://localhost/mean_sample');
 
 // listen on port 3000

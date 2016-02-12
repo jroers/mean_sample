@@ -13,6 +13,14 @@ app.use(express.static(__dirname + '/public'));
 // set view engine to hbs (handlebars)
 app.set('view engine', 'hbs');
 
+// ROUTES
+
+app.get('*', function(req, res) {
+	res.render('index');
+});
+
+// END OF ROUTES
+
 // connect to mongodb
 mongoose.connect('mongodb://localhost/mean_sample');
 

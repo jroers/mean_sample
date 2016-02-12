@@ -1,1 +1,28 @@
-angular.module('sampleApp', ['ui.router']);
+angular.module('sampleApp', ['ui.router'])
+	.config(config)
+	.controller('HomeController', HomeController);
+
+config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+function config($stateProvider, $urlRouterProvider, $locationProvider) {
+	console.log('config');
+
+	$locationProvider.html5Mode({
+		enabled: true,
+		requireBase: false
+	});
+
+	$urlRouterProvider.otherwise('/');
+
+	$stateProvider
+		.state('home', {
+			url: '/',
+			controller: 'HomeController',
+			controllerAs: 'home',
+			template: 'Home!'
+		});
+}
+
+function HomeController() {
+	var vm = this;
+	vm.homeTest = "Welcome to the homepage!";
+}

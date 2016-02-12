@@ -18,7 +18,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 			url: '/',
 			controller: 'HomeController',
 			controllerAs: 'home',
-			template: 'Home!'
+			templateUrl: '/templates/home.html'
 		});
 }
 
